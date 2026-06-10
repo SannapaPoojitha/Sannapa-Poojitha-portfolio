@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sannapa Poojitha | Data Analytics Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+:root{
+    --bg:#f4f7fc;
+    --card:#ffffff;
+    --text:#111827;
+    --primary:#2563eb;
+    --secondary:#4f46e5;
+    --shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dark{
+    --bg:#0f172a;
+    --card:#1e293b;
+    --text:#f8fafc;
+    --primary:#38bdf8;
+    --secondary:#818cf8;
+    --shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    transition:0.4s;
+}
+
+/* Animated Background */
+
+.background{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.background span{
+    position:absolute;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:rgba(37,99,235,0.15);
+    animation:float 15s linear infinite;
+}
+
+.background span:nth-child(1){left:10%;animation-delay:0s;}
+.background span:nth-child(2){left:25%;animation-delay:3s;}
+.background span:nth-child(3){left:40%;animation-delay:6s;}
+.background span:nth-child(4){left:55%;animation-delay:9s;}
+.background span:nth-child(5){left:70%;animation-delay:12s;}
+.background span:nth-child(6){left:85%;animation-delay:15s;}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh) scale(0);
+    }
+    100%{
+        transform:translateY(-100px) scale(2);
+    }
+}
+
+/* Navbar */
+
+nav{
+    position:sticky;
+    top:0;
+    background:var(--card);
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:var(--shadow);
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:500;
+}
+
+.toggle{
+    background:var(--primary);
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+}
+
+.hero h2{
+    color:var(--primary);
+    margin:15px 0;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:var(--primary);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+}
+
+/* Sections */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    color:var(--primary);
+    margin-bottom:50px;
+}
+
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+/* Skills */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:25px;
+}
+
+.skill{
+    margin-bottom:20px;
+}
+
+.skill-name{
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.bar{
+    width:100%;
+    height:12px;
+    background:#cbd5e1;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress{
+    height:100%;
+    background:linear-gradient(to right,var(--primary),var(--secondary));
+}
+
+/* Projects & Certificates */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.box{
+    background:var(--card);
+    padding:25px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    transition:0.3s;
+}
+
+.box:hover{
+    transform:translateY(-8px);
+}
+
+.box h3{
+    color:var(--primary);
+    margin-bottom:10px;
+}
+
+/* Contact */
+
+.contact p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:30px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+nav ul{
+display:none;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="background">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+<nav>
+<div class="logo">MS</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="toggle" onclick="toggleMode()">🌙 Mode</button>
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div>
+
+<h1>MANASWINI SUNKU</h1>
+
+<h2>Data Analytics Enthusiast</h2>
+
+<p>
+Transforming data into meaningful insights and intelligent decisions.
+Passionate about analytics, visualization, data-driven problem solving,
+and turning complex datasets into actionable business solutions.
+</p>
+
+<a href="#contact" class="btn">Contact Me</a>
+
+</div>
+
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="card">
+
+<p>
+
+I am Sannapa Poojitha, a B.Tech Computer Science Engineering student at
+PBR Visvodaya Institute of Technology and Science (PBRVITS), Kavali,
+SPSR Nellore, Andhra Pradesh.
+
+I am passionate about Data Analytics and enjoy extracting meaningful
+insights from data to support better decision-making.
+
+My technical skills include Java, Python, JavaScript, HTML, CSS, and MySQL.
+I continuously learn new technologies and work on improving my analytical,
+technical, and problem-solving abilities.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Skills -->
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="card">
+
+<h3>Programming Skills</h3><br>
+
+<div class="skill">
+<div class="skill-name">Python - 75%</div>
+<div class="bar"><div class="progress" style="width:75%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Java - 70%</div>
+<div class="bar"><div class="progress" style="width:70%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">JavaScript - 70%</div>
+<div class="bar"><div class="progress" style="width:70%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">C - 65%</div>
+<div class="bar"><div class="progress" style="width:65%"></div></div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Tools & Database</h3><br>
+
+<div class="skill">
+<div class="skill-name">MySQL - 75%</div>
+<div class="bar"><div class="progress" style="width:75%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Git - 70%</div>
+<div class="bar"><div class="progress" style="width:70%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">GitHub - 75%</div>
+<div class="bar"><div class="progress" style="width:75%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">VS Code - 90%</div>
+<div class="bar"><div class="progress" style="width:90%"></div></div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Education -->
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="card">
+
+<h3>B.Tech in Computer Science Engineering</h3>
+
+<p>PBR Visvodaya Institute of Technology and Science (PBRVITS)</p>
+
+<p>Kavali, SPSR Nellore, Andhra Pradesh</p>
+
+<p>CGPA: 6.72</p>
+
+<p>Graduation Year: 2027</p>
+
+</div>
+
+</section>
+
+<!-- Certificates -->
+
+<section id="certificates">
+
+<h2 class="section-title">Certificates</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>Data Fundamentals</h3>
+<p>IBM SkillsBuild</p>
+<p>Issued: February 2026</p>
+</div>
+
+<div class="box">
+<h3>Artificial Intelligence Fundamentals</h3>
+<p>IBM SkillsBuild</p>
+<p>Issued: January 2026</p>
+</div>
+
+<div class="box">
+<h3>Customer Engagement: Problem Solving and Process Controls</h3>
+<p>IBM SkillsBuild</p>
+<p>Issued: January 2026</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Projects -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="grid">
+
+<div class="box">
+<h3>Data Analytics Project</h3>
+<p>Add your Python Data Analytics project here.</p>
+</div>
+
+<div class="box">
+<h3>SQL Database Project</h3>
+<p>Add your MySQL project here.</p>
+</div>
+
+<div class="box">
+<h3>Portfolio Website</h3>
+<p>Personal portfolio developed using HTML, CSS and JavaScript.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<div class="card contact">
+
+<p><strong>Name:</strong> Sannapa Poojitha</p>
+
+<p><strong>Email:</strong> sannapa.poojitha@gmail.com</p>
+
+<p><strong>Phone:</strong> +91 8801122268</p>
+
+<p><strong>Role:</strong> Data Analytics Enthusiast</p>
+
+<p><strong>Status:</strong> Open for Internships and Opportunities</p>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Sannapa Poojitha | Data Analytics Portfolio
+
+</footer>
+
+<script>
+
+function toggleMode(){
+document.body.classList.toggle("dark");
+}
+
+</script>
+
+</body>
+</html>
